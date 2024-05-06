@@ -9,14 +9,13 @@ const Transactions = db.transactions;
 
 const RacketsData = [
   {
-    model: "Y'all never listen to me",
+    model: 'So I was walking Oscar',
 
     condition: 'Old',
 
-    price: 62.52,
+    price: 21.32,
 
-    description:
-      'Like fire across the galaxy the Clone Wars spread. In league with the wicked Count Dooku, more and more planets slip. Against this threat, upon the Jedi Knights falls the duty to lead the newly formed army of the Republic. And as the heat of war grows, so, to, grows the prowess of one most gifted student of the Force.',
+    description: 'Reckless he is. Matters are worse.',
 
     // type code here for "images" field
 
@@ -24,13 +23,14 @@ const RacketsData = [
   },
 
   {
-    model: 'That damn diabetes',
+    model: 'Contact the tower',
 
     condition: 'New',
 
-    price: 60.61,
+    price: 89.14,
 
-    description: 'Your weapons, you will not need them.',
+    description:
+      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
 
     // type code here for "images" field
 
@@ -38,13 +38,29 @@ const RacketsData = [
   },
 
   {
-    model: "C'mon Naomi",
+    model: 'Come on now',
 
     condition: 'Used',
 
-    price: 50.49,
+    price: 23.98,
 
-    description: 'Luminous beings are we - not this crude matter.',
+    description:
+      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
+
+    // type code here for "images" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    model: 'I tell you what',
+
+    condition: 'New',
+
+    price: 71.92,
+
+    description:
+      'The dark side clouds everything. Impossible to see the future is.',
 
     // type code here for "images" field
 
@@ -54,20 +70,9 @@ const RacketsData = [
 
 const ReviewsData = [
   {
-    content:
-      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+    content: 'Difficult to see. Always in motion is the future...',
 
-    rating: 1,
-
-    // type code here for "relation_one" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    content: 'Truly wonderful, the mind of a child is.',
-
-    rating: 9,
+    rating: 2,
 
     // type code here for "relation_one" field
 
@@ -75,9 +80,29 @@ const ReviewsData = [
   },
 
   {
-    content: 'Use your feelings, Obi-Wan, and find him you will.',
+    content: 'You will find only what you bring in.',
 
-    rating: 5,
+    rating: 7,
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    content: 'You will find only what you bring in.',
+
+    rating: 7,
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    content: 'You will find only what you bring in.',
+
+    rating: 2,
 
     // type code here for "relation_one" field
 
@@ -87,7 +112,27 @@ const ReviewsData = [
 
 const TransactionsData = [
   {
-    transaction_date: new Date('2023-12-17'),
+    transaction_date: new Date('2023-09-30'),
+
+    status: 'Cancelled',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    transaction_date: new Date('2023-08-10'),
+
+    status: 'Cancelled',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    transaction_date: new Date('2023-11-06'),
 
     status: 'Pending',
 
@@ -97,19 +142,9 @@ const TransactionsData = [
   },
 
   {
-    transaction_date: new Date('2024-03-10'),
+    transaction_date: new Date('2023-09-06'),
 
-    status: 'Completed',
-
-    // type code here for "relation_one" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    transaction_date: new Date('2023-12-27'),
-
-    status: 'Completed',
+    status: 'Cancelled',
 
     // type code here for "relation_one" field
 
@@ -152,6 +187,17 @@ async function associateRacketWithSeller() {
   if (Racket2?.setSeller) {
     await Racket2.setSeller(relatedSeller2);
   }
+
+  const relatedSeller3 = await Users.findOne({
+    offset: Math.floor(Math.random() * (await Users.count())),
+  });
+  const Racket3 = await Rackets.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Racket3?.setSeller) {
+    await Racket3.setSeller(relatedSeller3);
+  }
 }
 
 async function associateReviewWithRacket() {
@@ -186,6 +232,17 @@ async function associateReviewWithRacket() {
   });
   if (Review2?.setRacket) {
     await Review2.setRacket(relatedRacket2);
+  }
+
+  const relatedRacket3 = await Rackets.findOne({
+    offset: Math.floor(Math.random() * (await Rackets.count())),
+  });
+  const Review3 = await Reviews.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Review3?.setRacket) {
+    await Review3.setRacket(relatedRacket3);
   }
 }
 
@@ -222,6 +279,17 @@ async function associateReviewWithAuthor() {
   if (Review2?.setAuthor) {
     await Review2.setAuthor(relatedAuthor2);
   }
+
+  const relatedAuthor3 = await Users.findOne({
+    offset: Math.floor(Math.random() * (await Users.count())),
+  });
+  const Review3 = await Reviews.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Review3?.setAuthor) {
+    await Review3.setAuthor(relatedAuthor3);
+  }
 }
 
 async function associateTransactionWithBuyer() {
@@ -257,6 +325,17 @@ async function associateTransactionWithBuyer() {
   if (Transaction2?.setBuyer) {
     await Transaction2.setBuyer(relatedBuyer2);
   }
+
+  const relatedBuyer3 = await Users.findOne({
+    offset: Math.floor(Math.random() * (await Users.count())),
+  });
+  const Transaction3 = await Transactions.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Transaction3?.setBuyer) {
+    await Transaction3.setBuyer(relatedBuyer3);
+  }
 }
 
 async function associateTransactionWithRacket() {
@@ -291,6 +370,17 @@ async function associateTransactionWithRacket() {
   });
   if (Transaction2?.setRacket) {
     await Transaction2.setRacket(relatedRacket2);
+  }
+
+  const relatedRacket3 = await Rackets.findOne({
+    offset: Math.floor(Math.random() * (await Rackets.count())),
+  });
+  const Transaction3 = await Transactions.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Transaction3?.setRacket) {
+    await Transaction3.setRacket(relatedRacket3);
   }
 }
 
