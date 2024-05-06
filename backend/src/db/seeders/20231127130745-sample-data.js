@@ -9,43 +9,14 @@ const Transactions = db.transactions;
 
 const RacketsData = [
   {
-    model: 'So I was walking Oscar',
-
-    condition: 'Old',
-
-    price: 21.32,
-
-    description: 'Reckless he is. Matters are worse.',
-
-    // type code here for "images" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    model: 'Contact the tower',
+    model: 'I tell you what',
 
     condition: 'New',
 
-    price: 89.14,
+    price: 91.41,
 
     description:
-      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
-
-    // type code here for "images" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    model: 'Come on now',
-
-    condition: 'Used',
-
-    price: 23.98,
-
-    description:
-      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
+      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
 
     // type code here for "images" field
 
@@ -55,12 +26,40 @@ const RacketsData = [
   {
     model: 'I tell you what',
 
-    condition: 'New',
+    condition: 'Used',
 
-    price: 71.92,
+    price: 87.76,
+
+    description: 'Use your feelings, Obi-Wan, and find him you will.',
+
+    // type code here for "images" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    model: "How 'bout them Cowboys",
+
+    condition: 'Used',
+
+    price: 67.76,
 
     description:
-      'The dark side clouds everything. Impossible to see the future is.',
+      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+
+    // type code here for "images" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    model: 'That damn Bill Stull',
+
+    condition: 'Old',
+
+    price: 22.22,
+
+    description: 'Adventure. Excitement. A Jedi craves not these things.',
 
     // type code here for "images" field
 
@@ -70,19 +69,9 @@ const RacketsData = [
 
 const ReviewsData = [
   {
-    content: 'Difficult to see. Always in motion is the future...',
+    content: 'That is why you fail.',
 
-    rating: 2,
-
-    // type code here for "relation_one" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    content: 'You will find only what you bring in.',
-
-    rating: 7,
+    rating: 6,
 
     // type code here for "relation_one" field
 
@@ -90,9 +79,9 @@ const ReviewsData = [
   },
 
   {
-    content: 'You will find only what you bring in.',
+    content: 'Reckless he is. Matters are worse.',
 
-    rating: 7,
+    rating: 8,
 
     // type code here for "relation_one" field
 
@@ -100,9 +89,21 @@ const ReviewsData = [
   },
 
   {
-    content: 'You will find only what you bring in.',
+    content:
+      'Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall.',
 
-    rating: 2,
+    rating: 9,
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    content:
+      'Clear your mind must be, if you are to find the villains behind this plot.',
+
+    rating: 6,
 
     // type code here for "relation_one" field
 
@@ -112,7 +113,7 @@ const ReviewsData = [
 
 const TransactionsData = [
   {
-    transaction_date: new Date('2023-09-30'),
+    transaction_date: new Date('2023-09-19'),
 
     status: 'Cancelled',
 
@@ -122,19 +123,9 @@ const TransactionsData = [
   },
 
   {
-    transaction_date: new Date('2023-08-10'),
+    transaction_date: new Date('2024-02-19'),
 
-    status: 'Cancelled',
-
-    // type code here for "relation_one" field
-
-    // type code here for "relation_one" field
-  },
-
-  {
-    transaction_date: new Date('2023-11-06'),
-
-    status: 'Pending',
+    status: 'Completed',
 
     // type code here for "relation_one" field
 
@@ -142,9 +133,19 @@ const TransactionsData = [
   },
 
   {
-    transaction_date: new Date('2023-09-06'),
+    transaction_date: new Date('2023-06-13'),
 
-    status: 'Cancelled',
+    status: 'Completed',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    transaction_date: new Date('2023-09-12'),
+
+    status: 'Completed',
 
     // type code here for "relation_one" field
 
